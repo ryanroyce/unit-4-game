@@ -63,7 +63,7 @@ $(document).ready(function () {
         if (userScore === computerPick) {
             wins++;
             $("#wins").html("Wins: " + wins);
-            alert("Winning isn’t everything, it’s the only thing");
+            alert("Winning isn’t everything, it’s the ONLY thing");
             newGame();
         }
 
