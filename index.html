@@ -7,7 +7,7 @@
     <!-- jQuery Link -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Game Logic -->
-    <script type="text/javascript" src="assets/javascript/crystalsCollector.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -34,7 +34,12 @@
 
     <div>
       <!-- Crystals -->
-      <div id="crystal-area"></div>
+      <div id="crystal-area">
+        <img src="assets/images/red.png" class="click" id="red">
+        <img src="assets/images/blue.png" class="click" id="blue">
+        <img src="assets/images/yellow.png" class="click" id="yellow">
+        <img src="assets/images/green.png" class="click" id="green">
+      </div>
       <div id="score-title">Your total score is:</div>
       <!-- Score Display -->
       <div id="score-area"></div>
