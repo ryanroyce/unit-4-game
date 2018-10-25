@@ -18,7 +18,7 @@ $(document).ready(function () {
         yellow = Math.floor(Math.random() * 12) + 1;
         green = Math.floor(Math.random() * 12) + 1;
         computerPick = Math.floor(Math.random() * 101) + 19;
-        $("#screen").html(computerPick);
+        $("#random-area").html(computerPick);
         $("#score-area").html(userScore);
         // console logging to make sure random numbers are being chosen
         console.log("red gem is " + red);
@@ -28,14 +28,58 @@ $(document).ready(function () {
         console.log("computer pick is " + computerPick);
     };
 
-// on click for all gem images
+    // on click for all gem images
     $("#red").on("click", function () {
-        var redClick = userScore += red;
-        $("#score-area").html(redClick);
-        console.log("red click is " + redClick);
+        var currentScore = userScore += red;
+        $("#score-area").html(currentScore);
+        console.log("red click is " + currentScore);
+        winCheck();
+    });
+
+    $("#blue").on("click", function () {
+        var currentScore = userScore += blue;
+        $("#score-area").html(currentScore);
+        console.log("blue click is " + currentScore);
+        winCheck();
+    });
+
+    $("#yellow").on("click", function () {
+        var currentScore = userScore += yellow;
+        $("#score-area").html(currentScore);
+        console.log("yellow click is " + currentScore);
+        winCheck();
+    });
+
+    $("#green").on("click", function () {
+        var currentScore = userScore += green;
+        $("#score-area").html(currentScore);
+        console.log("green click is " + currentScore);
+        winCheck();
     });
 
 
+    // define win check and set parameters for a win, loss or to keep going
+    function winCheck() {
+        if (userScore === computerPick) {
+            wins++;
+            $("#wins").html("Wins: " + wins);
+            alert("Winning isn’t everything, it’s the only thing");
+            newGame();
+        }
 
+        else if (userScore > computerPick) {
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            alert("...if you ain't first, you're last");
+            newGame();
+        };
+    };
+    // function that allows a new game user score reset and start back at zero
+    function newGame() {
+        userScore = 0;
+        gameStart();
+    };
+    // starts the game
     gameStart();
+
 });
